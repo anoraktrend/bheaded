@@ -1,6 +1,11 @@
+PREFIX ?= /usr
+
 main:
-	curl -LJ "https://git.alpinelinux.org/aports/plain/main/bsd-compat-headers/tree.h"  -o  tree.h
-	curl -LJ "https://git.alpinelinux.org/aports/plain/main/bsd-compat-headers/cdefs.h" -o cdefs.h
-	curl -LJ "https://git.alpinelinux.org/aports/plain/main/bsd-compat-headers/queue.h" -o queue.h
+	curl -LJ "https://raw.githubusercontent.com/chimera-linux/cports/main/musl-bsd-headers/files/tree.h" -o tree.h
+	curl -LJ "https://raw.githubusercontent.com/chimera-linux/cports/main/musl-bsd-headers/files/cdefs.h" -o cdefs.h
+	curl -LJ "https://raw.githubusercontent.com/chimera-linux/cports/main/musl-bsd-headers/files/queue.h" -o queue.h
+	curl -LJ "https://raw.githubusercontent.com/chimera-linux/cports/main/musl-bsd-headers/files/error.h" -o error.h
+
 install:
-	install -Dm644 -t $(DESTDIR)/$(PREFIX)/sys cdefs.h queue.h tree.h
+	install -dm755 $(DESTDIR)$(PREFIX)/include/bsd
+	install -m644 *.h $(DESTDIR)$(PREFIX)/include/bsd/
