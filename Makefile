@@ -2,7 +2,7 @@
 PREFIX ?= /usr
 CURL := curl -LJf --retry 3 --retry-delay 2 --connect-timeout 30 --max-time 120
 FILES = tree.h cdefs.h queue.h error.h
-BASE_URL = https://raw.githubusercontent.com/chimera-linux/cports/main/musl-bsd-headers/files
+BASE_URL = https://raw.githubusercontent.com/chimera-linux/cports/refs/heads/master/main/musl-bsd-headers/files/
 
 .PHONY: all fetch clean install uninstall check
 
