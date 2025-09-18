@@ -7,5 +7,5 @@ main:
 	curl -LJ "https://raw.githubusercontent.com/chimera-linux/cports/main/musl-bsd-headers/files/error.h" -o error.h
 
 install:
-	install -dm755 $(DESTDIR)$(PREFIX)/include/bsd
-	install -m644 *.h $(DESTDIR)$(PREFIX)/include/bsd/
+	install -dm755 $(DESTDIR)$(PREFIX)/include/sys
+	install -m644 *.h $(DESTDIR)$(PREFIX)/include/sys/
